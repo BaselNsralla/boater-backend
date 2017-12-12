@@ -9,6 +9,9 @@ const _PROFILE = require('./query-entities/profile.js')
 const fakeUsers = {
 	'a': 'fakefake'
 }
+const {promisify} = require('util');
+const firebase = require('../../db/api')
+
 const schema = new GraphQLSchema({
 	query: new GraphQLObjectType({
 		name: 'root',
@@ -19,13 +22,10 @@ const schema = new GraphQLSchema({
 		   profile: {
 				type: _PROFILE,
 				resolve: (context, args) => {
-					return {
-						tools: {potatos: '123$', mangos: '100$'},
-						user: {name: fakeUsers[args.id], lastname: 'LALAL'}
-					}
+					return firebase.getData(`/users/${args.deviceId}`)
 				},
 				args: {
-					id: { type: GraphQLString }
+					deviceId: { type: GraphQLString }
 				}
 		   }
 		}
