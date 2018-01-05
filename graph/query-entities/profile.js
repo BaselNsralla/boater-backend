@@ -8,19 +8,19 @@ const {
 
 
 
-const _TOOLS = new GraphQLObjectType({
-	name: 'tools',
+const _RESOURCES = new GraphQLObjectType({
+	name: 'resources',
 	fields: {
-		mangos: {
+		fire: {
 			type: GraphQLString ,
 			resolve: (fullparentreturnedobject) => {
-				return fullparentreturnedobject.mangos
+				return fullparentreturnedobject.fire
 			}
 		},
-		potatos: {
+		water: {
 			type: GraphQLString,
 			resolve: (fullparentreturnedobject) => {
-				return fullparentreturnedobject.potatos
+				return fullparentreturnedobject.water
 			}
 		}
 	}
@@ -43,9 +43,9 @@ const _USER = new GraphQLObjectType({
 const _PROFILE = new GraphQLObjectType({
 	name : 'profile',
 	fields: {
-		tools: {
-			type: _TOOLS,
-			resolve: (context) => (context.tools)
+		resources: {
+			type: _RESOURCES,
+			resolve: (context) => context.resources
 		},
 		user: {
 			type: _USER,
