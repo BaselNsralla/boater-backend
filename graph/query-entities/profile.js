@@ -49,7 +49,7 @@ const _PROFILE = new GraphQLObjectType({
 		},
 		user: {
 			type: _USER,
-			resolve: (context) => context.user
+			resolve: (context) => context
 		}
 	}
 })

@@ -14,7 +14,7 @@ util.inherits(API, EventEmitter);
 API.prototype.getData = function(dataPath) {
     if(this.authenticated) {
         return this.store.ref(dataPath).once('value').then(data => {
-            const results = results.val()
+            const results = data.val()
             console.log(results)
             return results
         }).catch(err => {
