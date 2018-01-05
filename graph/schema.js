@@ -10,7 +10,7 @@ const fakeUsers = {
 	'a': 'fakefake'
 }
 const {promisify} = require('util');
-const firebase = require('../../db/api')
+const firebase = require('../db/api')
 
 const schema = new GraphQLSchema({
 	query: new GraphQLObjectType({
@@ -22,6 +22,7 @@ const schema = new GraphQLSchema({
 		   profile: {
 				type: _PROFILE,
 				resolve: (context, args) => {
+					//console.log(firebase.getData(`users/${args.deviceId}`))
 					return firebase.getData(`/users/${args.deviceId}`)
 				},
 				args: {

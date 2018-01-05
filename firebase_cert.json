@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "boater-app",
+  "private_key_id": "42baffc7e0bf5892943a13b5a31a6d0ee176d07d",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC1/tFErNw/k8k8\nOHHuVqf/QFZhIFDg3kSzRPZrEKGqOzR6I5sY0mNN+LQ37HTQuaSJJHKXexrnFpl9\nNUQqXzcdFBYZ+4of3dzS8n+M8VSYHSvQwsgemdY6VPf9W84hMhhUXqrsECKUejB5\nBoBBitWkjAlPhw8tuIs/GFpevNldZOl7au9MK1tWo2D+xkyQAE3zoI1pMoUYXBdo\nWSEub3KDSSFPuwovMOlyCIQ/CYgs/cJWxc+njvGOtSAWNsg2qqaM8/b0Rsopm4Vg\nkX80bOA2vcaby7+TwyJbxuASau4Kec9V1HXst6B3rEmXgUvLsJWkcqQBqrcHs8vO\nHg1e/rdvAgMBAAECggEAOnd4RzW5M/uIRH5lq4nPQqMqnN1C3lrJe0YGW/Ll3MhU\nXYCezOSZ3mytiOG/zWY2Q5Cf96YmyGJsQNsh4PLhw8e2KfazMvWVgXdCHsdQw+Vr\nNA+/NoV5Wxf86znZCLUNN92Jz3iHg2eVtuutvGCbrdcHDrN23ttQcJ6kOZc1xVif\nUMcmDqij/oVHY75ay0ZKb0OXA7LpirkuM3rIQSOv1d/jmRGnejqD7DGQyNH/eYOn\no8qTCl/eJAZWFDmKm7zFsgpWYLzYBt67cC+ukxadC/60mYKx7zRBoiPf80cHk+wT\nAiDk3lzs12+zR80YLfpX9LBuj4KHXnUw/WlfGuqU0QKBgQD+azD7aUOblpO5sfn8\nkuzyIOSI3EtPxLd82FAIhOe2gA3kD8cOMu1PERPhUNKWcAFLCSoIu/ajoKH+hfnQ\nbJX6o7/Jlw6FSR3ECSOSzr51uUulhH8jKY2k9zW0fFgcnG/gRr8QtlaafiPQt9Hd\nRMYfNX9NmgNz2fIZIyOVDhi02wKBgQC3IGR5toQC4Rgqgn8L2lXyMHtNllbvtSBy\nPBOOdiug85kXJ9BgIU0V2+pvZSWBICSaCV5QdCf4q8CqhJggpzD8LRm2s5V/H32z\n7k/CY9GUKhXVaNK73B01uL01tobUs4VQbWp5L9cAbP2IRf0B+xpYre43KAwmGzHi\nsH6Jezdh/QKBgQCySp4V4au+UiSOIppElRY1jDV7b53bdcj8VX6oqbLUIyMY6rGd\nUrUZDqe243PgdveBBRgO7OInwv8jJfJuTFpCPhS+CfzkDNwuMBVc4UN5rnPDt3l9\nQ7Z+n7tkEyuQSVThf9KPvKguNi2VK+yHOpX48v2WfVLkEhzl3sklwK4xtwKBgG8E\nqUUMfD2Onuruj/zskZww/h+MXAoYYaI/f4+nXk3GQHJERdRxe90bpKWByVnd1bK4\nqT/XG4BrB3OYzO1GzrCi2urjNmeJ/Nf/SsVLZHwRg4kMcm1HRUITTEnq7RS3/MNE\ngf8UHKD6cj2SSI9R3qgSUc+IbM0RQY3vd9b7Jxk1AoGBAOUvPYECTtZyo+t6NMNe\n/5ZYrPEcPsvw6KEl3fTqsJj2WbONOT1QwYvaKkf6iQ2t7maPHibWkqmb1XyLcpOC\nPL4pIcrgQbRBYkdRuU19n5drMF+/6i4Y6sH+oA8IkumSxqR+Q4xZfAhjwB2Vsapi\nDSfx55zS0am9E4LmwBBXvDsN\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-5jhgd@boater-app.iam.gserviceaccount.com",
+  "client_id": "101482420052589966799",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-5jhgd%40boater-app.iam.gserviceaccount.com"
+}
