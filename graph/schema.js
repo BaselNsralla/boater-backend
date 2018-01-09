@@ -3,13 +3,15 @@ const {
   GraphQLSchema,
   GraphQLObjectType,
   GraphQLString,
-  GraphQLNonNull
+  GraphQLNonNull,
+  GraphQLList
 } = require ('graphql');
 const _PROFILE = require('./query-entities/profile.js')
+const _CHAT = require('./query-entities/chat.js')
 const fakeUsers = {
 	'a': 'fakefake'
 }
-const {promisify} = require('util');
+const { promisify } = require('util');
 const firebase = require('../db/api')
 
 const schema = new GraphQLSchema({
@@ -22,12 +24,20 @@ const schema = new GraphQLSchema({
 		   profile: {
 				type: _PROFILE,
 				resolve: (context, args) => {
-					//console.log(firebase.getData(`users/${args.deviceId}`))
 					return firebase.getData(`/users/${args.deviceId}`)
 				},
 				args: {
 					deviceId: { type: GraphQLString }
 				}
+		   },
+		   chats: {
+			   type:  new GraphQLList(GraphQLString),
+			   resolve: (context, args) => {
+					return firebase.getData(`/chats/${args.deviceId}`).then(data => Object.keys(data))
+			   },
+			   args : {
+				   deviceId: { type: GraphQLString }
+			   }
 		   }
 		}
 	})

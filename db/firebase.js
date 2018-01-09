@@ -22,7 +22,6 @@ function Firebase (cb) {
      firebase.initializeApp(config)
      firebase.auth().signInWithCustomToken(customToken)
      firebase.auth().onAuthStateChanged(function(user) {
-       console.log(user)
        cb(firebase.database())
      })
   })
