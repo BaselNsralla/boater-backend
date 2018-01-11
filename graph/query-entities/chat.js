@@ -3,11 +3,18 @@ const {
     GraphQLSchema,
     GraphQLObjectType,
     GraphQLString,
-    GraphQLNonNull
+    GraphQLNonNull,
+    GraphQLList
 } = require ('graphql')
 
 const _CHAT = new GraphQLObjectType({
-    name: 'chat'
-
+    name: 'chat',
+    fields: {
+        users: {
+            type: new GraphQLList(GraphQLString),
+            resolve: context => Object.values(context.users)
+        }
+    }
 
 })
+module.exports = _CHAT

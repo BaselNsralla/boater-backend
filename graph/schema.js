@@ -9,9 +9,6 @@ const {
 const _PROFILE = require('./query-entities/profile.js')
 const _CHAT = require('./query-entities/chat.js')
 const _STORE_ITEM = require('./query-entities/store.js')
-const fakeUsers = {
-	'a': 'fakefake'
-}
 const { promisify } = require('util');
 const firebase = require('../db/api')
 
@@ -32,8 +29,8 @@ const schema = new GraphQLSchema({
 				}
 		   },
 		   chats: {
-			   type:  new GraphQLList(GraphQLString),
-			   resolve: (context, args) => { return firebase.getData(`/chats/${args.deviceId}`).then(data => Object.keys(data)) },
+			   type:  _CHAT,
+			   resolve: (context, args) => { return firebase.getData(`/chats/${args.chatId}`) },
 			   args: {
 				   chatId: { type: GraphQLString }
 			   }
