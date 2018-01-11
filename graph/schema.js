@@ -8,6 +8,7 @@ const {
 } = require ('graphql');
 const _PROFILE = require('./query-entities/profile.js')
 const _CHAT = require('./query-entities/chat.js')
+const _STORE_ITEM = require('./query-entities/store.js')
 const fakeUsers = {
 	'a': 'fakefake'
 }
@@ -32,12 +33,17 @@ const schema = new GraphQLSchema({
 		   },
 		   chats: {
 			   type:  new GraphQLList(GraphQLString),
-			   resolve: (context, args) => {
-					return firebase.getData(`/chats/${args.deviceId}`).then(data => Object.keys(data))
-			   },
-			   args : {
-				   deviceId: { type: GraphQLString }
+			   resolve: (context, args) => { return firebase.getData(`/chats/${args.deviceId}`).then(data => Object.keys(data)) },
+			   args: {
+				   chatId: { type: GraphQLString }
 			   }
+		   },
+		   store: {
+			   type: new GraphQLList(_STORE_ITEM),
+			   resolve: (context, args) => { return firebase.getData(`/stores/${args.deviceId}`).then(data => Object.values(data)) },
+			   args: {
+				   deviceId: { type: GraphQLString }
+			   } 
 		   }
 		}
 	})

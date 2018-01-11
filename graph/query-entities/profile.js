@@ -3,9 +3,9 @@ const {
   GraphQLSchema,
   GraphQLObjectType,
   GraphQLString,
+  GraphQLList,
   GraphQLNonNull
 } = require ('graphql')
-
 
 
 const _RESOURCES = new GraphQLObjectType({
@@ -50,6 +50,10 @@ const _PROFILE = new GraphQLObjectType({
 		user: {
 			type: _USER,
 			resolve: (context) => context
+		},
+		chats: {
+			type: new GraphQLList(GraphQLString),
+			resolve: (context) => context.chats
 		}
 	}
 })
