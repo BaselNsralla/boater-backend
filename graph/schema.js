@@ -30,14 +30,14 @@ const schema = new GraphQLSchema({
 		   },
 		   chats: {
 			   type:  _CHAT,
-			   resolve: (context, args) => { return firebase.getData(`/chats/${args.chatId}`) },
+			   resolve: (context, args) => firebase.getData(`/chats/${args.chatId}`),
 			   args: {
 				   chatId: { type: GraphQLString }
 			   }
 		   },
 		   store: {
 			   type: new GraphQLList(_STORE_ITEM),
-			   resolve: (context, args) => { return firebase.getData(`/stores/${args.deviceId}`).then(data => Object.values(data)) },
+			   resolve: (context, args) => firebase.getData(`/stores/${args.deviceId}`).then(data => Object.values(data)),
 			   args: {
 				   deviceId: { type: GraphQLString }
 			   } 
