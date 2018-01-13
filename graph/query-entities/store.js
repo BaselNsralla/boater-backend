@@ -6,11 +6,15 @@ const {
     GraphQLList,
     GraphQLNonNull
   } = require ('graphql')
-
+const uuid = require('uuid/v1')
 
 const _STORE_ITEM = new GraphQLObjectType({
     name: 'store_item',
     fields: {
+        id: {
+            type: GraphQLString,
+            resolve: (context) => context.id   
+        },
         item: {
             type: GraphQLString,
             resolve: (context) => context.item
