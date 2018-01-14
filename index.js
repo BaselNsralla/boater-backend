@@ -23,3 +23,26 @@ app.use('/graphql', graphqlHTTP({
 }));
 app.listen(4000);
 console.log('Running a GraphQL API server at localhost:4000/graphql');
+/*profile(deviceId: "thisisahash") {
+  user {
+   name,
+ }   
+ resources {
+     water
+ },
+ chats
+},
+store(deviceId: "thisisahash") {
+ item,
+ costItem,
+ costAmount,
+ amount
+},
+chats(chatId: "chatIdX"){
+ users,
+ messages {
+   author,
+   message
+ }
+}
+*/

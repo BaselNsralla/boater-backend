@@ -23,6 +23,12 @@ API.prototype.getData = function(dataPath) {
     } else {
         this.on('authenticated', this.getData(dataPath))
     }
-} 
+}
+
+API.prototype.setData = function(dataPath, dataObj) {
+    return this.store.ref(dataPath).set(dataObj)
+    .then(()=> true)
+    .catch(err => false) 
+}
 const api = new API()
 module.exports = api
