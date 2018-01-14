@@ -53,7 +53,7 @@ const schema = new GraphQLSchema({
 				args: {
 					item_id:  { type: new GraphQLNonNull(GraphQLString) },
 					store_id: { type: new GraphQLNonNull(GraphQLString) },
-					buyer_id:  { type: new GraphQLNonNull(GraphQLString) }
+					buyer_id: { type: new GraphQLNonNull(GraphQLString) }
 				},
 				resolve: (ctx, {store_id, item_id, buyer_id}) => {
 					return storeCtrl.buyItem(store_id, item_id, buyer_id)
