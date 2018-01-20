@@ -4,7 +4,9 @@ const {
     GraphQLObjectType,
     GraphQLString,
     GraphQLList,
-    GraphQLNonNull
+    GraphQLNonNull,
+    GraphQLInt,
+    GraphQLInputObjectType
   } = require ('graphql')
 const uuid = require('uuid/v1')
 
@@ -31,9 +33,16 @@ const _STORE_ITEM = new GraphQLObjectType({
             type: GraphQLString,
             resolve: (context) => context.costAmount
         },
-
     }
-
 })
 
-module.exports = _STORE_ITEM
+const _INPUT_STORE_ITEM = new GraphQLInputObjectType({
+    name: 'GeoPoint',
+    fields: {
+      item: { type: new GraphQLNonNull(GraphQLString) },
+      amount: { type: new GraphQLNonNull(GraphQLInt) },
+      costItem: { type: new GraphQLNonNull(GraphQLString) },
+      costAmount: { type: new GraphQLNonNull(GraphQLInt) }
+    }
+  });
+module.exports = { _STORE_ITEM, _INPUT_STORE_ITEM}

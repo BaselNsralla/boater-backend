@@ -24,9 +24,11 @@ const buyItem = async (store_id, item_id, buyer_id, seller_id) => {
     return true
 }
 
+const addItem = async (user_id, storeItem) => {
+    return true
+}
 
 
 
-
-const ctrl = {buyItem}
+const ctrl = { buyItem, addItem }
 module.exports = ctrl

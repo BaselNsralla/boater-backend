@@ -9,10 +9,11 @@ const {
 } = require ('graphql');
 const _PROFILE = require('./query-entities/profile.js')
 const _CHAT = require('./query-entities/chat.js')
-const _STORE_ITEM = require('./query-entities/store.js')
+const { _INPUT_STORE_ITEM, _STORE_ITEM } = require('./query-entities/store.js')
 const { promisify } = require('util');
 const firebase = require('../db/api')
 const storeCtrl = require('../controllers/storeCtrl.js')
+
 const schema = new GraphQLSchema({
 	query: new GraphQLObjectType({
 		name: 'root',
@@ -51,9 +52,9 @@ const schema = new GraphQLSchema({
 			buyItem: {
 				type: GraphQLBoolean,
 				args: {
-					item_id:  { type: new GraphQLNonNull(GraphQLString) },
-					store_id: { type: new GraphQLNonNull(GraphQLString) },
-					buyer_id: { type: new GraphQLNonNull(GraphQLString) },
+					item_id:   { type: new GraphQLNonNull(GraphQLString) },
+					store_id:  { type: new GraphQLNonNull(GraphQLString) },
+					buyer_id:  { type: new GraphQLNonNull(GraphQLString) },
 					seller_id: { type: new GraphQLNonNull(GraphQLString) }
 				},
 				resolve: (ctx, {store_id, item_id, buyer_id, seller_id}) => {
@@ -62,8 +63,12 @@ const schema = new GraphQLSchema({
 			},
 			addItemToStore: {
 				type : GraphQLBoolean,
-				resolve : () => {
-					return false
+				resolve : (ctx, { user_id, store_item }) => {
+					return storeCtrl.addItem()
+				},
+				args: {
+					user_id:    { type: new GraphQLNonNull(GraphQLString) },
+					store_item: { type: _INPUT_STORE_ITEM }
 				}
 			},
 			addUser: {

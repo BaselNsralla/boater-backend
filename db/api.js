@@ -15,10 +15,10 @@ API.prototype.getData = function(dataPath) {
     if(this.authenticated) {
         return this.store.ref(dataPath).once('value').then(data => {
             const results = data.val()
-            console.log('GET DATA RESULTS',results)
+            console.log('GET DATA RESULTS', results)
             return results
         }).catch(err => {
-            console.log('failed to fetch data',err)
+            console.log('failed to fetch data', err)
         })
     } else {
         this.on('authenticated', this.getData(dataPath))
