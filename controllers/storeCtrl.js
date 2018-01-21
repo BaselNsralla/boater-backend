@@ -24,7 +24,15 @@ const buyItem = async (store_id, item_id, buyer_id, seller_id) => {
     return true
 }
 
-const addItem = async (user_id, storeItem) => {
+const addItem = async (userId, storeItemObj) => {
+    const {item, amount, costAmount, costItem} = storeItemObj
+    console.log(storeItemObj)
+    if( !helpers.validateStoreItem(item) ) return false
+    let resources = await api.getData(`/users/${userId}/resources`)
+    let storeId = await api.getData(`/users/${userId}/storeId`)
+    // i want this + 1 because its fun
+    if( !helpers.validateTransaction(resources[item], amount + 1) ) return false
+    if( !await api.setData(`/stores/${storeId}/${helpers.generateId()}`, {item, amount, costAmount, costItem})) return false
     return true
 }
 

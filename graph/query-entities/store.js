@@ -37,11 +37,11 @@ const _STORE_ITEM = new GraphQLObjectType({
 })
 
 const _INPUT_STORE_ITEM = new GraphQLInputObjectType({
-    name: 'GeoPoint',
+    name: 'StoreItem',
     fields: {
-      item: { type: new GraphQLNonNull(GraphQLString) },
-      amount: { type: new GraphQLNonNull(GraphQLInt) },
-      costItem: { type: new GraphQLNonNull(GraphQLString) },
+      item:       { type: new GraphQLNonNull(GraphQLString) },
+      amount:     { type: new GraphQLNonNull(GraphQLInt) },
+      costItem:   { type: new GraphQLNonNull(GraphQLString) },
       costAmount: { type: new GraphQLNonNull(GraphQLInt) }
     }
   });

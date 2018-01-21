@@ -64,7 +64,7 @@ const schema = new GraphQLSchema({
 			addItemToStore: {
 				type : GraphQLBoolean,
 				resolve : (ctx, { user_id, store_item }) => {
-					return storeCtrl.addItem()
+					return storeCtrl.addItem(user_id, store_item)
 				},
 				args: {
 					user_id:    { type: new GraphQLNonNull(GraphQLString) },
