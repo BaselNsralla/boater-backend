@@ -71,6 +71,16 @@ const schema = new GraphQLSchema({
 					store_item: { type: _INPUT_STORE_ITEM }
 				}
 			},
+			removeItemFromStore: {
+				type: GraphQLBoolean,
+				resolve: (ctx, {user_id, item_id}) => {
+					return storeCtrl.removeItem(user_id, item_id)
+				},
+				args: {
+					user_id:  { type: new GraphQLNonNull(GraphQLString) },
+					item_id: {type: new GraphQLNonNull(GraphQLString)} 
+				}
+			},
 			addUser: {
 				type: GraphQLBoolean,
 				resolve: () => {
